@@ -11,12 +11,45 @@
     <header class="header">
       <h1>Anime Fan</h1>
     </header>
-    <aside class="aside"></aside>
+    <aside class="aside">
+      <form class="filter-form">
+        <h3>Filter By</h3>
+        <div class="form__section">
+          <label for="type">Type</label>
+          <select name="type" id="type">
+            <option value="">Choose an option</option>
+            <option value="type">Type</option>
+            <option value="score">Score</option>
+            <option value="Shortlisted">Shortlisted</option>
+          </select>
+        </div>
+        <div class="form__section">
+          <label for="score">Score higher than</label>
+          <input type="number" name="score" id="score" />
+        </div>
+        <div class="form__section">
+          <label for="members">Shortlisted by more than</label>
+          <input type="number" name="members" id="members" />
+        </div>
+      </form>
+    </aside>
+    <section class="order-section">
+      <form class="order-form">
+        <label for="order">Order by</label>
+        <select name="order" id="order">
+          <option value="">Choose an option</option>
+          <option value="score">Score</option>
+          <option value="members">Shortlisted by</option>
+          <option value="type">Type</option>
+        </select>
+      </form>
+    </section>
     <main class="main">
       <section class="container"></section>
     </main>
   </body>
 </html>
+
 <!-- 
   <a     target="_blank"
           href="https://myanimelist.net/anime/5114/Fullmetal_Alchemist__Brotherhood">
