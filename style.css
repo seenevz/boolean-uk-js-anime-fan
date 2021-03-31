@@ -13,18 +13,21 @@ a {
   --primary-colour: #363aeb;
   --secondary-colour: #fffd85;
   --white: #fcfcfc;
+  --black: #3b3b3b;
 }
 
 body {
   display: grid;
   grid-template:
     "header header"
+    "aside order-section"
     "aside main" 1fr /
-    1fr 4fr;
+    minmax(300px, 1fr) 4fr;
 
   height: 100vh;
 
   font-family: sans-serif;
+  color: var(--black);
   background-color: var(--white);
 }
 
@@ -36,8 +39,19 @@ body {
 }
 
 .aside {
+  display: grid;
+  grid-template-columns: 250px;
+  place-content: center;
   grid-area: aside;
   background-color: var(--secondary-colour);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 3px, rgba(0, 0, 0, 0.23) 0px 3px 3px;
+}
+
+.order-section {
+  grid-area: order-section;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 3px -3px,
+    rgba(0, 0, 0, 0.23) 0px 3px 3px -3px;
 }
 
 .main {
@@ -57,7 +71,37 @@ body {
 .card {
   margin-bottom: 2rem;
   padding: 1rem;
-  border: 1px solid black;
+  border: 1px solid var(--black);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.39) 0px 1px 4px;
+}
+
+.order-form {
+  display: inline-block;
+  background-color: var(--secondary-colour);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+
+.filter-form {
+  padding: 1rem;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 10px;
+}
+.filter-form .form__section {
+  margin: 1rem auto;
+}
+
+.filter-form .form__section input {
+  display: block;
+}
+
+.filter-form .form__section input[type="number"] {
+  width: 100px;
+}
+
+.filter-form .form__section label {
+  display: block;
+  margin-bottom: 0.4rem;
 }
