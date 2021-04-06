@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JS</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
     <script src="index.js"></script>
@@ -10,6 +9,7 @@
   <body>
     <header class="header">
       <h1>Anime Fan</h1>
+      <h2><em>Where fans come for anime</em></h2>
     </header>
     <aside class="aside">
       <form class="filter-form">
@@ -18,9 +18,8 @@
           <label for="type">Type</label>
           <select name="type" id="type">
             <option value="">Choose an option</option>
-            <option value="type">Type</option>
-            <option value="score">Score</option>
-            <option value="Shortlisted">Shortlisted</option>
+            <option value="TV">Tv</option>
+            <option value="Movie">Movie</option>
           </select>
         </div>
         <div class="form__section">
@@ -33,11 +32,12 @@
         </div>
       </form>
     </aside>
-    <section class="order-section">
-      <form class="order-form">
-        <label for="order">Order by</label>
-        <select name="order" id="order">
+    <section class="sort-section">
+      <form class="sort-form">
+        <label for="sort">Order by</label>
+        <select name="sort" id="sort">
           <option value="">Choose an option</option>
+          <option value="title">Title</option>
           <option value="score">Score</option>
           <option value="members">Shortlisted by</option>
           <option value="type">Type</option>

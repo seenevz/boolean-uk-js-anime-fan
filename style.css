@@ -20,7 +20,7 @@ body {
   display: grid;
   grid-template:
     "header header"
-    "aside order-section"
+    "aside sort-section"
     "aside main" 1fr /
     minmax(300px, 1fr) 4fr;
 
@@ -35,7 +35,7 @@ body {
   grid-area: header;
   background-color: var(--primary-colour);
   padding: 2rem;
-  color: var(--white);
+  color: var(--secondary-colour);
 }
 
 .aside {
@@ -47,8 +47,8 @@ body {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 3px, rgba(0, 0, 0, 0.23) 0px 3px 3px;
 }
 
-.order-section {
-  grid-area: order-section;
+.sort-section {
+  grid-area: sort-section;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 3px -3px,
     rgba(0, 0, 0, 0.23) 0px 3px 3px -3px;
@@ -76,7 +76,24 @@ body {
   box-shadow: rgba(0, 0, 0, 0.39) 0px 1px 4px;
 }
 
-.order-form {
+.card__header {
+  display: grid;
+  place-items: center;
+  height: 3rem;
+}
+
+.card p {
+  display: inline-block;
+  width: 49%;
+  padding: 0.5rem 0;
+}
+
+.card img {
+  margin: 0.5rem auto;
+  display: block;
+}
+
+.sort-form {
   display: inline-block;
   background-color: var(--secondary-colour);
   border-radius: 10px;
