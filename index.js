@@ -7,22 +7,22 @@ let originalAnimes = null;
 
 const getAnimeList = () => {
   fetch(API_URL)
-    .then(resp => resp.json())
-    .then(animes => {
+    .then((resp) => resp.json())
+    .then((animes) => {
       originalAnimes = animes.top;
       renderAnimes(animes.top);
     });
 };
 
-const renderAnimes = animesArr => {
+const renderAnimes = (animesArr) => {
   const container = document.querySelector(".container");
   container.innerHTML = "";
-  filterAndSortAnimes(animesArr).forEach(anime => {
+  filterAndSortAnimes(animesArr).forEach((anime) => {
     container.append(createAnimeCard(anime));
   });
 };
 
-const createAnimeCard = animeObj => {
+const createAnimeCard = (animeObj) => {
   const card = document.createElement("a");
   card.href = animeObj.url;
   card.className = "card";
@@ -61,15 +61,15 @@ const sortAnimes = (animesArr, sortType) => {
     score: (a, b) => compareNumbers(a.score, b.score),
     type: (a, b) => compareWords(a.type, b.type),
     members: (a, b) => compareNumbers(a.members, b.members),
-    title: (a, b) => compareWords(a.title, b.title),
+    title: (a, b) => compareWords(a.title, b.title)
   };
 
   return sortType !== "" ? animesArr.sort(sortFuncs[sortType]) : animesArr;
 };
 
-filterAnimes = (animesArr, filterType) => {
+const filterAnimes = (animesArr, filterType) => {
   console.log(filterType);
-  return animesArr.filter(obj => {
+  return animesArr.filter((obj) => {
     return Object.keys(filterType).reduce((acc, val) => {
       if (acc === false) return false;
 
@@ -82,7 +82,7 @@ filterAnimes = (animesArr, filterType) => {
   });
 };
 
-const filterAndSortAnimes = animesArr =>
+const filterAndSortAnimes = (animesArr) =>
   sortAnimes(filterAnimes(animesArr, filterFormObj), sortValue);
 
 const addFilterFormListener = () => {
